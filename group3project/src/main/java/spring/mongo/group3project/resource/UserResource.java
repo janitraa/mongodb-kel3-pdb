@@ -5,9 +5,11 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import spring.mongo.group3project.document.Pegawai;
 import spring.mongo.group3project.document.Users;
+import spring.mongo.group3project.repository.PegawaiRepository;
 import spring.mongo.group3project.repository.UserRepository;
-import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 
 import java.util.List;
 
@@ -17,8 +19,11 @@ public class UserResource {
 
     private UserRepository userRepository;
 
-    public UserResource(UserRepository userRepository) {
+    private PegawaiRepository pegawaiRepository;
+
+    public UserResource(UserRepository userRepository, PegawaiRepository pegawaiRepository) {
         this.userRepository = userRepository;
+        this.pegawaiRepository = pegawaiRepository;
     }
 
     @GetMapping("/all")
@@ -28,7 +33,8 @@ public class UserResource {
 
 
     @GetMapping("/all-test")
-    public List<Users> getAllTest(){
-        MongoOperations mongoOps = new MongoTemplate(new SimpleMongoDbFactory(new Mongo(), "database"));
+    public List<Pegawai> getAllTest(){
+//        MongoOperations mongoOps = new MongoTemplate(new SimpleMongoClientDatabaseFactory(new Mongo(), "database"));
+        return pegawaiRepository.findAll();
     }
 }
