@@ -6,12 +6,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-@Document
+@Document(collection = "us_accident_collection")
 public class Accident {
 
     @Id
-    private Integer id;
-    private String severity;
+    private String id;
+    private Integer id_accident;
+    private Integer severity;
     private Double start_lat;
     private Double start_lng;
     private Integer side;
@@ -30,14 +31,14 @@ public class Accident {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date_start;
-    @DateTimeFormat(pattern = "hh:mm:ss")
+    @DateTimeFormat(pattern = "HH:mm:ss")
     private Date time_start;
     private Integer month_start;
     private Integer year_start;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date_end;
-    @DateTimeFormat(pattern = "hh:mm:ss")
+    @DateTimeFormat(pattern = "HH:mm:ss")
     private Date time_end;
     private Integer month_end;
     private Integer year_end;
@@ -45,8 +46,9 @@ public class Accident {
     private Integer total;
     private Integer period_time;
 
-    public Accident(Integer id, String severity, Double start_lat, Double start_lng, Integer side, Integer city, Integer county, Integer state, Integer zipcode, Double temperature, Double humidity, Double pressure, Double visibility, Integer wind_direction, Double wind_speed, Integer weather_condition, Integer traffic_signal, Date date_start, Date time_start, Integer month_start, Integer year_start, Date date_end, Date time_end, Integer month_end, Integer year_end, Integer total, Integer period_time) {
+    public Accident(String id, Integer id_accident, Integer severity, Double start_lat, Double start_lng, Integer side, Integer city, Integer county, Integer state, Integer zipcode, Double temperature, Double humidity, Double pressure, Double visibility, Integer wind_direction, Double wind_speed, Integer weather_condition, Integer traffic_signal, Date date_start, Date time_start, Integer month_start, Integer year_start, Date date_end, Date time_end, Integer month_end, Integer year_end, Integer total, Integer period_time) {
         this.id = id;
+        this.id_accident = id_accident;
         this.severity = severity;
         this.start_lat = start_lat;
         this.start_lng = start_lng;
@@ -75,19 +77,27 @@ public class Accident {
         this.period_time = period_time;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getSeverity() {
+    public Integer getId_accident() {
+        return id_accident;
+    }
+
+    public void setId_accident(Integer id_accident) {
+        this.id_accident = id_accident;
+    }
+
+    public Integer getSeverity() {
         return severity;
     }
 
-    public void setSeverity(String severity) {
+    public void setSeverity(Integer severity) {
         this.severity = severity;
     }
 

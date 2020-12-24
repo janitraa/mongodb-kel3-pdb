@@ -23,22 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60172df0-43a2-45c0-9033-8e49e9964c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/spring/mongo/group3project/Group3projectApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/Group3projectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/Group3projectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/MongoDBConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/MongoDBConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accident.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Pegawai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Pegawai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/PegawaiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/PegawaiRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/resource/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/resource/UserResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/mongo/group3project/config/MongoDBConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/mongo/group3project/config/MongoDBConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/mongo/group3project/config/MongoDBConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/mongo/group3project/document/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/mongo/group3project/repository/UserRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/mongo/group3project/resource/UserResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/mongo/group3project/resource/UserResource.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +47,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -70,6 +68,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -90,15 +89,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Group3projectApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,7 +135,8 @@
       <option name="presentableId" value="Default" />
       <updated>1608651339233</updated>
       <workItem from="1608651341377" duration="2827000" />
-      <workItem from="1608714194703" duration="13164000" />
+      <workItem from="1608714194703" duration="13366000" />
+      <workItem from="1608800120825" duration="7961000" />
     </task>
     <servers />
   </component>
@@ -158,50 +156,50 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1245" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1608739334299">
+    <state x="1245" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1608805745596">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1245" y="252" key="#com.intellij.ide.util.MemberChooser/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608739334299" />
+    <state x="1245" y="252" key="#com.intellij.ide.util.MemberChooser/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608805745596" />
     <state x="1245" y="259" key="#com.intellij.ide.util.MemberChooser/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608721825074" />
-    <state width="1877" height="442" key="GridCell.Tab.0.bottom" timestamp="1608734352342">
+    <state width="1877" height="256" key="GridCell.Tab.0.bottom" timestamp="1608817702277">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.0.bottom/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352342" />
+    <state width="1877" height="256" key="GridCell.Tab.0.bottom/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702277" />
     <state width="1877" height="294" key="GridCell.Tab.0.bottom/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255277" />
-    <state width="1877" height="442" key="GridCell.Tab.0.center" timestamp="1608734352342">
+    <state width="1877" height="256" key="GridCell.Tab.0.center" timestamp="1608817702276">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.0.center/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352342" />
+    <state width="1877" height="256" key="GridCell.Tab.0.center/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702276" />
     <state width="1877" height="294" key="GridCell.Tab.0.center/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255277" />
-    <state width="1877" height="442" key="GridCell.Tab.0.left" timestamp="1608734352341">
+    <state width="1877" height="256" key="GridCell.Tab.0.left" timestamp="1608817702275">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.0.left/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352341" />
+    <state width="1877" height="256" key="GridCell.Tab.0.left/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702275" />
     <state width="1877" height="294" key="GridCell.Tab.0.left/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255276" />
-    <state width="1877" height="442" key="GridCell.Tab.0.right" timestamp="1608734352342">
+    <state width="1877" height="256" key="GridCell.Tab.0.right" timestamp="1608817702276">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.0.right/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352342" />
+    <state width="1877" height="256" key="GridCell.Tab.0.right/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702276" />
     <state width="1877" height="294" key="GridCell.Tab.0.right/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255277" />
-    <state width="1877" height="442" key="GridCell.Tab.1.bottom" timestamp="1608734352343">
+    <state width="1877" height="256" key="GridCell.Tab.1.bottom" timestamp="1608817702278">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.1.bottom/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352343" />
+    <state width="1877" height="256" key="GridCell.Tab.1.bottom/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702278" />
     <state width="1877" height="294" key="GridCell.Tab.1.bottom/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255278" />
-    <state width="1877" height="442" key="GridCell.Tab.1.center" timestamp="1608734352342">
+    <state width="1877" height="256" key="GridCell.Tab.1.center" timestamp="1608817702277">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.1.center/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352342" />
+    <state width="1877" height="256" key="GridCell.Tab.1.center/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702277" />
     <state width="1877" height="294" key="GridCell.Tab.1.center/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255277" />
-    <state width="1877" height="442" key="GridCell.Tab.1.left" timestamp="1608734352342">
+    <state width="1877" height="256" key="GridCell.Tab.1.left" timestamp="1608817702277">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.1.left/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352342" />
+    <state width="1877" height="256" key="GridCell.Tab.1.left/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702277" />
     <state width="1877" height="294" key="GridCell.Tab.1.left/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255277" />
-    <state width="1877" height="442" key="GridCell.Tab.1.right" timestamp="1608734352343">
+    <state width="1877" height="256" key="GridCell.Tab.1.right" timestamp="1608817702278">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="442" key="GridCell.Tab.1.right/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608734352343" />
+    <state width="1877" height="256" key="GridCell.Tab.1.right/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608817702278" />
     <state width="1877" height="294" key="GridCell.Tab.1.right/-1366.316.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1608722255278" />
     <state x="490" y="180" key="Maven.ArtifactSearchDialog" timestamp="1608729833234">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -211,5 +209,16 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1096" y="247" key="run.anything.popup/-1366.316.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1608739400305" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/MongoDBConfig.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
