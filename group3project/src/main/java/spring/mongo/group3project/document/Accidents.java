@@ -7,14 +7,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 @Document(collection = "us_accident_collection")
-public class Accident {
+public class Accidents {
 
     @Id
     private String id;
     private Integer id_accident;
     private Integer severity;
-    private Double start_lat;
-    private Double start_lng;
     private String side;
     private String city;
     private String county;
@@ -45,12 +43,12 @@ public class Accident {
 
     private String period_time;
 
-    public Accident(String id, Integer id_accident, Integer severity, Double start_lat, Double start_lng, String side, String city, String county, String state, Integer zipcode, Double temperature, Double humidity, Double pressure, Double visibility, Integer wind_direction, Double wind_speed, Integer weather_condition, Integer traffic_signal, Date date_start, Date time_start, Integer month_start, Integer year_start, Date date_end, Date time_end, Integer month_end, Integer year_end, String period_time) {
+    private Location location;
+
+    public Accidents(String id, Integer id_accident, Integer severity, String side, String city, String county, String state, Integer zipcode, Double temperature, Double humidity, Double pressure, Double visibility, Integer wind_direction, Double wind_speed, Integer weather_condition, Integer traffic_signal, Date date_start, Date time_start, Integer month_start, Integer year_start, Date date_end, Date time_end, Integer month_end, Integer year_end, String period_time, Location location) {
         this.id = id;
         this.id_accident = id_accident;
         this.severity = severity;
-        this.start_lat = start_lat;
-        this.start_lng = start_lng;
         this.side = side;
         this.city = city;
         this.county = county;
@@ -73,6 +71,7 @@ public class Accident {
         this.month_end = month_end;
         this.year_end = year_end;
         this.period_time = period_time;
+        this.location = location;
     }
 
     public String getId() {
@@ -97,22 +96,6 @@ public class Accident {
 
     public void setSeverity(Integer severity) {
         this.severity = severity;
-    }
-
-    public Double getStart_lat() {
-        return start_lat;
-    }
-
-    public void setStart_lat(Double start_lat) {
-        this.start_lat = start_lat;
-    }
-
-    public Double getStart_lng() {
-        return start_lng;
-    }
-
-    public void setStart_lng(Double start_lng) {
-        this.start_lng = start_lng;
     }
 
     public String getSide() {
@@ -289,5 +272,13 @@ public class Accident {
 
     public void setPeriod_time(String period_time) {
         this.period_time = period_time;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }
