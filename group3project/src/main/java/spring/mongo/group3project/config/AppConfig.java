@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 public class AppConfig {
 
     public MongoClient mongoClient() {
-        return MongoClients.create("mongodb://localhost:27017");
+        return MongoClients.create("mongodb://localhost:27118");
     }
 
     public @Bean MongoTemplate mongoTemplate() {
-        return new MongoTemplate(mongoClient(), "us_accident");
+        return new MongoTemplate(mongoClient(), "USAccident");
     }
 }
