@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 
 <head>
 
@@ -131,22 +131,19 @@
           <h1 class="mb-5">Search historical accident in United States now!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form th:action="@{/us-accidents}" method="GET">
             <div class="form-row">
-              <!-- <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div> -->
               <div class="col-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Location">
+                <input type="text" name="city" class="form-control form-control-lg" placeholder="City">
               </div>
               <div class="col-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Keyword">
+                <input type="text" name="county" class="form-control form-control-lg" placeholder="County">
               </div>
-              <div class="col-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Cities">
-              </div>
+<!--              <div class="col-4">-->
+<!--                <input type="text" name="street" class="form-control form-control-lg" placeholder="Street">-->
+<!--              </div>-->
               <div class="col-12" style="margin-top: 20px;">
-                <a href="#history-list" type="submit" class="btn btn-block btn-lg btn-outline-light">Search Now!</a>
+                <button type="submit"  class="btn btn-block btn-lg btn-outline-light">Search Now!</button>
               </div>
             </div>
           </form>
@@ -158,38 +155,64 @@
   <!-- List By Search -->
   <header id="history-list" class="masthead features-icons card-list"
     style="padding-top: 0rem; padding-bottom: 2rem;">
-    <div class="desc container text-white">
-      <h5>List History for Location: NW-101, Keyword: Windy, Cities: Chicago</h5>
-    </div>
+<!--    <div class="desc container text-white">-->
+<!--      <h5>List History for Location: NW-101, Keyword: Windy, Cities: Chicago</h5>-->
+<!--    </div>-->
     <div class="overlay"></div>
     <br>
     <div class="alert alert-danger" role="alert">
       Daerah <a href="#" class="alert-link">Chicago</a>. Memiliki tingkat kecelakaan yang tinggi!
     </div>
-    <div class="card" style="margin-bottom:20px">
-      <h5 class="card-header">Date: 10-12-2020</h5>
+
+    <div th:each="accident, indexStat : ${accidentsList}" class="card" style="margin-bottom:20px">
+      <h5 class="card-header" th:text="${accident.severity}"></h5>
       <div class="card-body">
-        <h5 class="card-title">At Chicago NW-101</h5>
-        <p class="card-text">Night, Windy, ...</p>
-        <a href="#" class="btn btn-dark">Go to map</a>
+        <h5 class="card-title" th:text="${accident.id}"></h5>
+        <h5 class="card-text" th:text="${accident.city}"></h5>
+        <p class="card-text" th:text="${accident.county}"></p>
+        <p class="card-text" th:text="${accident.state}"></p>
+        <div class="row">
+          <div>
+            <form th:action="@{/us-accidents/geo-loc}" method="GET">
+              <input type="hidden" name="long" th:value="${accident.location.coordinates.start_lng}">
+              <input type="hidden" name="lat" th:value="${accident.location.coordinates.start_lat}">
+              <div class="col">
+                <input type="text" name="dist" class="form-control form-control-sm" placeholder="Distance (Km)">
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-dark">Search Nearby!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="card" style="margin-bottom:20px">
-      <h5 class="card-header">Date: 10-12-2020</h5>
-      <div class="card-body">
-        <h5 class="card-title">At Chicago NW-101</h5>
-        <p class="card-text">Night, Windy, ...</p>
-        <a href="#" class="btn btn-dark">Go to map</a>
-      </div>
-    </div>
-    <div class="card" style="margin-bottom:20px">
-      <h5 class="card-header">Date: 10-12-2020</h5>
-      <div class="card-body">
-        <h5 class="card-title">At Chicago NW-101</h5>
-        <p class="card-text">Night, Windy, ...</p>
-        <a href="#" class="btn btn-dark">Go to map</a>
-      </div>
-    </div>
+
+<!--    <div class="card" style="margin-bottom:20px">-->
+<!--      <h5 class="card-header">Date: 10-12-2020</h5>-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-title">At Chicago NW-101</h5>-->
+<!--        <p class="card-text">Night, Windy, ...</p>-->
+<!--        <a href="#" class="btn btn-dark">Go to map</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="card" style="margin-bottom:20px">-->
+<!--      <h5 class="card-header">Date: 10-12-2020</h5>-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-title">At Chicago NW-101</h5>-->
+<!--        <p class="card-text">Night, Windy, ...</p>-->
+<!--        <a href="#" class="btn btn-dark">Go to map</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="card" style="margin-bottom:20px">-->
+<!--      <h5 class="card-header">Date: 10-12-2020</h5>-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-title">At Chicago NW-101</h5>-->
+<!--        <p class="card-text">Night, Windy, ...</p>-->
+<!--        <a href="#" class="btn btn-dark">Go to map</a>-->
+<!--      </div>-->
+<!--    </div>-->
   </header>
 
   <!-- Footer -->

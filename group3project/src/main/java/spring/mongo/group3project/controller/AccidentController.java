@@ -14,32 +14,43 @@ import spring.mongo.group3project.service.AccidentService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/accident")
 public class AccidentController {
-
-    private AccidentRepository accidentRepository;
 
     @Autowired
     private AccidentService accidentService;
 
-    public AccidentController(AccidentRepository accidentRepository) {
-        this.accidentRepository = accidentRepository;
-    }
+//    public AccidentController(AccidentRepository accidentRepository) {
+//        this.accidentRepository = accidentRepository;
+//    }
 
-    @GetMapping("/us-accident")
-    public String getUsAccident(Model model){
-        List<Accident> listAccident =  accidentService.getAllAccident();
-        model.addAttribute("listAccident", listAccident);
-        return "home";
-    }
+//    @GetMapping("/us-accident")
+//    public String getUsAccident(Model model){
+//        List<Accident> listAccident =  accidentService.getAllAccident();
+//        model.addAttribute("listAccident", listAccident);
+//        return "home";
+//    }
 
-    @GetMapping("/us-accident/by-distance")
+    @GetMapping("/us-accidents/geo-loc")
     public String getUsAccidentByDistance(Model model,
-                                          @RequestParam(value="long") float longitude,
-                                          @RequestParam(value="lat") float latitude,
-                                          @RequestParam(value="dist") int distance){
-        List<Accidents> listAccidents =  accidentService.getALlAccidentsByDistance(longitude, latitude, distance);
-        model.addAttribute("listAccident", listAccidents);
-        return "home";
+                                          @RequestParam(value="long", required = false) float longitude,
+                                          @RequestParam(value="lat", required = false) float latitude,
+                                          @RequestParam(value="dist", required = false) int distance){
+        List<Accidents> accidentsList =  accidentService.getALlAccidentsByDistance(longitude, latitude, distance);
+        System.out.println("accidentsList.size() = " + accidentsList.size());
+
+        model.addAttribute("accidentsList", accidentsList);
+        return "index";
+    }
+
+    @GetMapping("/us-accidents")
+    public String getUsAccidentByDistance(Model model,
+                                          @RequestParam(value="city", required = false) String city,
+                                          @RequestParam(value="county", required = false) String county
+                                          ){
+
+        System.out.println("city + county = " + city + county);
+        List<Accidents> accidentsList = accidentService.getAllAccidentsByFilter(city, county);
+        model.addAttribute("accidentsList", accidentsList);
+        return "index";
     }
 }

@@ -12,8 +12,10 @@ import java.util.List;
 
 public interface AccidentService {
 
-    public List<Accident> getAllAccident();
+//    public List<Accident> getAllAccident();
 
     public List<Accidents> getALlAccidentsByDistance(float longitude, float latitude, int distance);
+
+    public List<Accidents> getAllAccidentsByFilter(String city, String county);
 
 }

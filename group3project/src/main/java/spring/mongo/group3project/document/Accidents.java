@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-@Document(collection = "us_accident_collection")
+@Document(collection = "Collection")
 public class Accidents {
 
     @Id
@@ -27,17 +27,17 @@ public class Accidents {
     private Integer weather_condition;
     private Integer traffic_signal;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date_start;
-    @DateTimeFormat(pattern = "HH:mm:ss")
-    private Date time_start;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    private Date date_start;
+//    @DateTimeFormat(pattern = "HH:mm:ss")
+//    private Date time_start;
     private Integer month_start;
     private Integer year_start;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date_end;
-    @DateTimeFormat(pattern = "HH:mm:ss")
-    private Date time_end;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    private Date date_end;
+//    @DateTimeFormat(pattern = "HH:mm:ss")
+//    private Date time_end;
     private Integer month_end;
     private Integer year_end;
 
@@ -45,7 +45,7 @@ public class Accidents {
 
     private Location location;
 
-    public Accidents(String id, Integer id_accident, Integer severity, String side, String city, String county, String state, Integer zipcode, Double temperature, Double humidity, Double pressure, Double visibility, Integer wind_direction, Double wind_speed, Integer weather_condition, Integer traffic_signal, Date date_start, Date time_start, Integer month_start, Integer year_start, Date date_end, Date time_end, Integer month_end, Integer year_end, String period_time, Location location) {
+    public Accidents(String id, Integer id_accident, Integer severity, String side, String city, String county, String state, Integer zipcode, Double temperature, Double humidity, Double pressure, Double visibility, Integer wind_direction, Double wind_speed, Integer weather_condition, Integer traffic_signal, Integer month_start, Integer year_start, Integer month_end, Integer year_end, String period_time, Location location) {
         this.id = id;
         this.id_accident = id_accident;
         this.severity = severity;
@@ -62,12 +62,8 @@ public class Accidents {
         this.wind_speed = wind_speed;
         this.weather_condition = weather_condition;
         this.traffic_signal = traffic_signal;
-        this.date_start = date_start;
-        this.time_start = time_start;
         this.month_start = month_start;
         this.year_start = year_start;
-        this.date_end = date_end;
-        this.time_end = time_end;
         this.month_end = month_end;
         this.year_end = year_end;
         this.period_time = period_time;
@@ -202,22 +198,6 @@ public class Accidents {
         this.traffic_signal = traffic_signal;
     }
 
-    public Date getDate_start() {
-        return date_start;
-    }
-
-    public void setDate_start(Date date_start) {
-        this.date_start = date_start;
-    }
-
-    public Date getTime_start() {
-        return time_start;
-    }
-
-    public void setTime_start(Date time_start) {
-        this.time_start = time_start;
-    }
-
     public Integer getMonth_start() {
         return month_start;
     }
@@ -232,22 +212,6 @@ public class Accidents {
 
     public void setYear_start(Integer year_start) {
         this.year_start = year_start;
-    }
-
-    public Date getDate_end() {
-        return date_end;
-    }
-
-    public void setDate_end(Date date_end) {
-        this.date_end = date_end;
-    }
-
-    public Date getTime_end() {
-        return time_end;
-    }
-
-    public void setTime_end(Date time_end) {
-        this.time_end = time_end;
     }
 
     public Integer getMonth_end() {
