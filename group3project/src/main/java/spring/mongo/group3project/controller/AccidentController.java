@@ -4,13 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import spring.mongo.group3project.document.Accident;
 import spring.mongo.group3project.document.Accidents;
-import spring.mongo.group3project.repository.AccidentRepository;
 import spring.mongo.group3project.service.AccidentService;
-
 import java.util.List;
 
 @Controller
@@ -19,16 +15,10 @@ public class AccidentController {
     @Autowired
     private AccidentService accidentService;
 
-//    public AccidentController(AccidentRepository accidentRepository) {
-//        this.accidentRepository = accidentRepository;
-//    }
-
-//    @GetMapping("/us-accident")
-//    public String getUsAccident(Model model){
-//        List<Accident> listAccident =  accidentService.getAllAccident();
-//        model.addAttribute("listAccident", listAccident);
-//        return "home";
-//    }
+    @GetMapping("/")
+    public String home(){
+        return "redirect:/us-accidents";
+    }
 
     @GetMapping("/us-accidents/geo-loc")
     public String getUsAccidentByDistance(Model model,
@@ -43,13 +33,13 @@ public class AccidentController {
     }
 
     @GetMapping("/us-accidents")
-    public String getUsAccidentByDistance(Model model,
+    public String getUsAccidentByFilter(Model model,
                                           @RequestParam(value="city", required = false) String city,
-                                          @RequestParam(value="county", required = false) String county
+                                          @RequestParam(value="county", required = false) String county,
+                                          @RequestParam(value="date", required = false) String date
                                           ){
-
         System.out.println("city + county = " + city + county);
-        List<Accidents> accidentsList = accidentService.getAllAccidentsByFilter(city, county);
+        List<Accidents> accidentsList = accidentService.getAllAccidentsByFilter(city, county, date);
         model.addAttribute("accidentsList", accidentsList);
         return "index";
     }

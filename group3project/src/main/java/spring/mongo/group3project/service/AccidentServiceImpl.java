@@ -10,7 +10,6 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import spring.mongo.group3project.document.Accident;
 import spring.mongo.group3project.document.Accidents;
 import spring.mongo.group3project.repository.AccidentRepository;
 
@@ -27,17 +26,6 @@ public class AccidentServiceImpl implements AccidentService{
     @Autowired
     private MongoOperations mongoOperations;
 
-//    @Override
-//    public List<Accidents> getAllAccident(){
-//        List<Accident> allAccident = accidentRepository.findAll();
-//        List<Accident> headAccident = new ArrayList<>();
-//
-//        for(int i = 0; i< 5; i++)
-//            headAccident.add(allAccident.get(i));
-//
-//        return headAccident;
-//    }
-
     @Override
     public List<Accidents> getALlAccidentsByDistance(float longitude, float latitude, int distance) {
         Point basePoint = new Point(longitude, latitude);
@@ -53,29 +41,57 @@ public class AccidentServiceImpl implements AccidentService{
     }
 
     @Override
-    public List<Accidents> getAllAccidentsByFilter(String city, String county){
-//        System.out.println("city.isEmpty() = " + city.isEmpty());
-//        System.out.println("city.isBlank() = " + city.isBlank());
-//        System.out.println("county.isEmpty() = " + county.isEmpty());
-//        System.out.println("county.isBlank() = " + county.isBlank());
-
+    public List<Accidents> getAllAccidentsByFilter(String city, String county, String date){
         List<Accidents> accidentsList = new ArrayList<>();
 
-        if((city == null && county == null) || (city.isEmpty() && county.isEmpty())){
-            accidentsList.addAll(accidentRepository.findAll());
+        if((city == null && county == null && date == null) || (city.isEmpty() && county.isEmpty() && date.isEmpty())){
+            accidentsList = accidentRepository.findAll();
+            List<Accidents> final_list = new ArrayList<>();
+            if (accidentsList.size() >= 100) {
+                for (int i = 0; i < 100; i++) {
+                    final_list.add(accidentsList.get(i));
+                }
+            }
+            else final_list.addAll(accidentsList);
             System.out.println("accidentsList.size() = " + accidentsList.size());
 
+            return final_list;
+        }
+
+        if(county != null && city != null  && date != null && !date.isEmpty() && !city.isEmpty() && !county.isEmpty()){
+            List<Accidents> accidentsByCityCountyDate = accidentRepository.findAllByCityContainsAndCountyContainsAndDateContains(city, county, date);
+
+            System.out.println("accidentsByCityCountyDate = " + accidentsByCityCountyDate.size());
+
+            accidentsList.addAll(accidentsByCityCountyDate);
             return accidentsList;
         }
 
-        if(county != null && city != null && !city.isEmpty() && !county.isEmpty()){
+        if(county != null && city != null  && !city.isEmpty() && !county.isEmpty()){
             List<Accidents> accidentsByCityCounty = accidentRepository.findAllByCityContainsAndCountyContains(city, county);
 
             System.out.println("accidentsByCityCounty = " + accidentsByCityCounty.size());
 
             accidentsList.addAll(accidentsByCityCounty);
             return accidentsList;
+        }
 
+        if(date != null && city != null  && !city.isEmpty() && !date.isEmpty()){
+            List<Accidents> accidentsByCityDate = accidentRepository.findAllByCityContainsAndDateContains(city, date);
+
+            System.out.println("accidentsByCityDate = " + accidentsByCityDate.size());
+
+            accidentsList.addAll(accidentsByCityDate);
+            return accidentsList;
+        }
+
+        if(date != null && county != null  && !county.isEmpty() && !date.isEmpty()){
+            List<Accidents> accidentsByDateCounty = accidentRepository.findAllByDateContainsAndCountyContains(date, county);
+
+            System.out.println("accidentsByDateCounty = " + accidentsByDateCounty.size());
+
+            accidentsList.addAll(accidentsByDateCounty);
+            return accidentsList;
         }
 
         if(city != null && !city.isEmpty()){
@@ -96,12 +112,19 @@ public class AccidentServiceImpl implements AccidentService{
             return accidentsList;
 
         }
+
+        if(date != null && !date.isEmpty()){
+            List<Accidents> accidentsByDate = accidentRepository.findAllByDateContains(date);
+
+            System.out.println("accidentsByDate = " + accidentsByDate.size());
+
+            accidentsList.addAll(accidentsByDate);
+            return accidentsList;
+
+        }
         System.out.println("accidentsList filtered = " + accidentsList.size());
 
         return accidentsList;
-//        return null;
-//        Query query = new Query();
-//        query.addCriteria(Criteria.where("city").regex(city));
     }
 
 

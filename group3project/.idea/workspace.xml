@@ -23,11 +23,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60172df0-43a2-45c0-9033-8e49e9964c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/geoloc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/FinalProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/MongoDBConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/controller/AccidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/controller/AccidentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accident.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accidents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accidents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Pegawai.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Users.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/AccidentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/AccidentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/PegawaiRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/resource/UserResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/geoloc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/geoloc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +61,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1m1BhJEXWh4RH6XmRQh2LJwHVU8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,13 +75,14 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -77,6 +94,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Group3projectApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Group3projectApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="group3project" />
       <extension name="coverage">
@@ -122,7 +150,8 @@
       <workItem from="1609142806987" duration="3383000" />
       <workItem from="1609147508332" duration="10945000" />
       <workItem from="1609167993709" duration="2363000" />
-      <workItem from="1609170418746" duration="3948000" />
+      <workItem from="1609170418746" duration="4281000" />
+      <workItem from="1609247639047" duration="8724000" />
     </task>
     <servers />
   </component>

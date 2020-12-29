@@ -12,22 +12,18 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"> -->
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <!-- <link rel="stylesheet" th:href="@{/vendor/fontawesome-free/css/all.min.css}" type="text/css"> -->
-  <!-- <link rel="stylesheet" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" type="text/css"> -->
 
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" th:href="@{/css/landing-page.min.css}" -->
 
   <style>
     .card-list {
-      padding-right:5rem; 
+      padding-right:5rem;
       padding-left:5rem;
       padding-top:2rem;
       padding-bottom:1rem;
@@ -42,210 +38,145 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
-    <a class="navbar-brand" href="#">TA 03 - MongoDB</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#about">About<span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#search">Search</a>
+<!-- Navigation -->
+<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
+  <a class="navbar-brand" href="/us-accidents">Group 03 - MongoDB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#search">Search</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Title -->
+<header class="masthead text-white text-center">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Historical accident in United States</h1>
+        <h5>By Group PDB-03 with MongoDB Technology</h5>
+        <br>
+        <a type="button" href="#search" class="btn btn-outline-light btn-lg">Let's Start</a>
       </div>
     </div>
-  </nav>
+  </div>
+</header>
 
-  <!-- Title -->
-  <header class="masthead text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Historical accident in United States</h1>
-          <h5>By Group PDB-03 with MongoDB Technology</h5>
-          <br>
-          <a type="button" href="#about" class="btn btn-outline-light btn-lg">Let's Start</a>
-        </div>
+
+<!-- Search Field -->
+<header class="masthead text-white text-center" id="search">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Search historical accident in United States now!</h1>
       </div>
-    </div>
-  </header>
-
-  <!-- About -->
-  <header class="masthead text-white" style="padding-top: 2rem; padding-bottom: 0rem;" id="about">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-11 mx-auto">
-          <h1 class="mb-5">Faktor Utama Kecelakaan</h1>
-          <h5>Berdasarkan hasil analisis menggunakan metode correlation. Kami menemukan bahwa 3 faktor utama dari banyak kecelakaan yang terjadi di United States adalah</h5>
-          <br>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <header class="features-icons masthead text-white text-center" style="padding-top: 2rem; padding-bottom: 0rem;">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <form th:action="@{/us-accidents}" method="GET">
+          <div class="form-row">
+            <div class="col-4">
+              <input type="text" name="county" class="form-control form-control-lg" placeholder="County">
             </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+            <div class="col-4">
+              <input type="text" name="city" class="form-control form-control-lg" placeholder="City">
+            </div>
+            <div class="col-4">
+              <input class="form-control form-control-lg" type="date" name="date" id="example-date-local-input" placeholder="Date">
+            </div>
+            <div class="col-12" style="margin-top: 20px;">
+              <button type="submit"  class="btn btn-block btn-lg btn-outline-light">Search Now!</button>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
-            </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
-            </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
+<!-- List By Search -->
+<header id="history-list" class="masthead features-icons card-list"
+        style="padding-top: 0rem; padding-bottom: 2rem;">
+  <div class="overlay"></div>
+  <br>
 
-
-  <!-- Search Field -->
-  <header class="masthead text-white text-center" id="search">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Search historical accident in United States now!</h1>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form th:action="@{/us-accidents}" method="GET">
-            <div class="form-row">
-              <div class="col-4">
-                <input type="text" name="city" class="form-control form-control-lg" placeholder="City">
-              </div>
-              <div class="col-4">
-                <input type="text" name="county" class="form-control form-control-lg" placeholder="County">
-              </div>
-<!--              <div class="col-4">-->
-<!--                <input type="text" name="street" class="form-control form-control-lg" placeholder="Street">-->
-<!--              </div>-->
-              <div class="col-12" style="margin-top: 20px;">
-                <button type="submit"  class="btn btn-block btn-lg btn-outline-light">Search Now!</button>
-              </div>
-            </div>
-          </form>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div th:text="'Jumlah kecelakaan yang ditampilkan sebanyak ' + ${accidentsList.size()} + ' kecelakaan'" class="card d-flex justify-content-center" style="text-align: center; padding: 2px; width: 84%; margin-bottom: 20px; margin-left: 8%; color: white; background-color:  black">
       </div>
     </div>
-  </header>
-
-  <!-- List By Search -->
-  <header id="history-list" class="masthead features-icons card-list"
-    style="padding-top: 0rem; padding-bottom: 2rem;">
-<!--    <div class="desc container text-white">-->
-<!--      <h5>List History for Location: NW-101, Keyword: Windy, Cities: Chicago</h5>-->
-<!--    </div>-->
-    <div class="overlay"></div>
-    <br>
-    <div class="alert alert-danger" role="alert">
-      Daerah <a href="#" class="alert-link">Chicago</a>. Memiliki tingkat kecelakaan yang tinggi!
+    <div class="row">
+      <div th:if="${accidentsList != null && accidentsList.size() >= 10}"  class="alert alert-danger d-flex justify-content-center" role="alert" style="width: 84%; margin-left: 8%;">
+        Hati-hati banyak terjadi kecelakaan!
+      </div>
     </div>
+  </div>
 
-    <div th:each="accident, indexStat : ${accidentsList}" class="card" style="margin-bottom:20px">
-      <h5 class="card-header" th:text="${accident.severity}"></h5>
-      <div class="card-body">
-        <h5 class="card-title" th:text="${accident.id}"></h5>
-        <h5 class="card-text" th:text="${accident.city}"></h5>
-        <p class="card-text" th:text="${accident.county}"></p>
-        <p class="card-text" th:text="${accident.state}"></p>
-        <div class="row">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      <div th:each="accident, indexStat : ${accidentsList}" class="card col-5" style="margin-bottom:20px; width: 50%; margin-right: 5px; margin-left: 5px">
+        <h5 class="card-header" th:text="'#' + ${accident.id}"></h5>
+        <div class="card-body">
+          <h5 class="card-text" th:text="${accident.county} + ', ' + ${accident.city} + ', ' + ${accident.state}"></h5>
+          <p class="card-title" th:if="${accident.severity}==1" th:text="'Severity: Least Impact'"></p>
+          <p class="card-title" th:if="${accident.severity}==2" th:text="'Severity: Medium Impact'"></p>
+          <p class="card-title" th:if="${accident.severity}==3" th:text="'Severity: High Impact'"></p>
+          <p class="card-title" th:if="${accident.severity}==4" th:text="'Severity: Very High Impact'"></p>
+          <p class="card-title" th:text="'Period of Time: ' + ${accident.period_time}"></p>
+          <p class="card-title" th:text="'Date: ' + ${accident.date}"></p>
+
           <div>
-            <form th:action="@{/us-accidents/geo-loc}" method="GET">
-              <input type="hidden" name="long" th:value="${accident.location.coordinates.start_lng}">
-              <input type="hidden" name="lat" th:value="${accident.location.coordinates.start_lat}">
-              <div class="col">
-                <input type="text" name="dist" class="form-control form-control-sm" placeholder="Distance (Km)">
-              </div>
-              <div class="col">
-                <button type="submit" class="btn btn-dark">Search Nearby!</button>
-              </div>
-            </form>
+            <div>
+              <form th:action="@{/us-accidents/geo-loc}" method="GET">
+                <input type="hidden" name="long" th:value="${accident.location.coordinates.start_lng}">
+                <input type="hidden" name="lat" th:value="${accident.location.coordinates.start_lat}">
+                <div class="row">
+                  <div class="col">
+                    <input type="text" name="dist" class="form-control form-control-sm" placeholder="Distance (Km)">
+                  </div>
+                  <div class="col">
+                    <button type="submit" class="btn btn-dark" style="width: 80%">Search Nearby!</button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-
-<!--    <div class="card" style="margin-bottom:20px">-->
-<!--      <h5 class="card-header">Date: 10-12-2020</h5>-->
-<!--      <div class="card-body">-->
-<!--        <h5 class="card-title">At Chicago NW-101</h5>-->
-<!--        <p class="card-text">Night, Windy, ...</p>-->
-<!--        <a href="#" class="btn btn-dark">Go to map</a>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="card" style="margin-bottom:20px">-->
-<!--      <h5 class="card-header">Date: 10-12-2020</h5>-->
-<!--      <div class="card-body">-->
-<!--        <h5 class="card-title">At Chicago NW-101</h5>-->
-<!--        <p class="card-text">Night, Windy, ...</p>-->
-<!--        <a href="#" class="btn btn-dark">Go to map</a>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="card" style="margin-bottom:20px">-->
-<!--      <h5 class="card-header">Date: 10-12-2020</h5>-->
-<!--      <div class="card-body">-->
-<!--        <h5 class="card-title">At Chicago NW-101</h5>-->
-<!--        <p class="card-text">Night, Windy, ...</p>-->
-<!--        <a href="#" class="btn btn-dark">Go to map</a>-->
-<!--      </div>-->
-<!--    </div>-->
-  </header>
-
-  <!-- Footer -->
-  <footer class="footer text-white bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-          <ul class="list-inline mb-2">
-            <li class="list-inline-item">
-              <a href="#">About</a>
-            </li>
-          </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; TA PDB 2020. All Rights Reserved.</p>
-        </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-github fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</header>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <script src="@{/vendor/jquery/jquery.min.js}"></script>
-   <script src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
-  
+<!-- Footer -->
+<footer class="footer text-white bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <p class="text-muted small mb-4 mb-lg-0">&copy; Group 3 PDB 2020. All Rights Reserved.</p>
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="https://github.com/janitraa/mongodb-kel3-pdb">
+              <i class="fab fa-github fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="@{/vendor/jquery/jquery.min.js}"></script>
+<script src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
 
 </body>
 
