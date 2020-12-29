@@ -9,5 +9,6 @@ import java.util.List;
 public interface AccidentRepository extends MongoRepository<Accidents, Integer> {
     List<Accidents> findAllByCityContains(String city);
     List<Accidents> findAllByCountyContains(String county);
+    List<Accidents> findAllByCityContainsAndCountyContains(String city, String county);
 //    Accidents findAllByStr
 }

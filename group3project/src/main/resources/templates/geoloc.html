@@ -11,19 +11,19 @@
   <title>Landing Page</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"> -->
+<!--  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+   <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+<!--  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">-->
+<!--  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">-->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <!-- <link rel="stylesheet" th:href="@{/vendor/fontawesome-free/css/all.min.css}" type="text/css"> -->
-  <!-- <link rel="stylesheet" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" type="text/css"> -->
+   <link rel="stylesheet" th:href="@{/vendor/fontawesome-free/css/all.min.css}" type="text/css">
+   <link rel="stylesheet" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="css/landing-page.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" th:href="@{/css/landing-page.min.css}" -->
+<!--  <link href="css/landing-page.min.css" rel="stylesheet">-->
+   <link rel="stylesheet" th:href="@{/css/landing-page.min.css}">
 
   <style>
     .card-list {
@@ -160,32 +160,46 @@
 <!--    </div>-->
     <div class="overlay"></div>
     <br>
-    <div class="alert alert-danger" role="alert">
-      Daerah <a href="#" class="alert-link">Chicago</a>. Memiliki tingkat kecelakaan yang tinggi!
+
+    <div class="container-fluid">
+      <div class="row">
+        <div th:if="${accidentsList.size() >= 10}" class="alert alert-danger d-flex justify-content-center" role="alert" style="width: 84%; margin-left: 8%;">
+          Daerah ini memiliki tingkat kecelakaan yang tinggi!
+        </div>
+      </div>
     </div>
 
-    <div th:each="accident, indexStat : ${accidentsList}" class="card" style="margin-bottom:20px">
-      <h5 class="card-header" th:text="${accident.severity}"></h5>
-      <div class="card-body">
-        <h5 class="card-title" th:text="${accident.id}"></h5>
-        <h5 class="card-text" th:text="${accident.city}"></h5>
-        <p class="card-text" th:text="${accident.county}"></p>
-        <p class="card-text" th:text="${accident.state}"></p>
-        <div class="row">
-          <div>
-            <form th:action="@{/us-accidents/geo-loc}" method="GET">
-              <input type="hidden" name="long" th:value="${accident.location.coordinates.start_lng}">
-              <input type="hidden" name="lat" th:value="${accident.location.coordinates.start_lat}">
-              <div class="col">
-                <input type="text" name="dist" class="form-control form-control-sm" placeholder="Distance (Km)">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div th:each="accident, indexStat : ${accidentsList}" class="card col-5" style="margin-bottom:20px; width: 50%; margin-right: 5px; margin-left: 5px">
+          <h5 class="card-header" th:text="'#' + ${accident.id}"></h5>
+          <div class="card-body">
+            <h5 class="card-text" th:text="${accident.county} + ', ' + ${accident.city} + ', ' + ${accident.state}"></h5>
+            <p class="card-title" th:if="${accident.severity}==1" th:text="'Severity: Least Impact'"></p>
+            <p class="card-title" th:if="${accident.severity}==2" th:text="'Severity: Medium Impact'"></p>
+            <p class="card-title" th:if="${accident.severity}==3" th:text="'Severity: High Impact'"></p>
+            <p class="card-title" th:if="${accident.severity}==4" th:text="'Severity: Very High Impact'"></p>
+            <p class="card-title" th:text="'Period of Time:' ${accident.period_time}"></p>
+
+            <div>
+              <div>
+                <form th:action="@{/us-accidents/geo-loc}" method="GET">
+                  <input type="hidden" name="long" th:value="${accident.location.coordinates.start_lng}">
+                  <input type="hidden" name="lat" th:value="${accident.location.coordinates.start_lat}">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" name="dist" class="form-control form-control-sm" placeholder="Distance (Km)">
+                    </div>
+                    <div class="col">
+                      <button type="submit" class="btn btn-dark" style="width: 80%">Search Nearby!</button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="col">
-                <button type="submit" class="btn btn-dark">Search Nearby!</button>
-              </div>
-            </form>
+            </div>
+
           </div>
         </div>
-
       </div>
     </div>
 
@@ -241,10 +255,10 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <script src="@{/vendor/jquery/jquery.min.js}"></script>
-   <script src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!--  <script src="vendor/jquery/jquery.min.js"></script>-->
+<!--  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+   <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+   <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
   
 
 </body>

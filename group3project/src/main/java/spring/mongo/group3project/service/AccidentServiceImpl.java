@@ -68,11 +68,23 @@ public class AccidentServiceImpl implements AccidentService{
             return accidentsList;
         }
 
+        if(county != null && city != null && !city.isEmpty() && !county.isEmpty()){
+            List<Accidents> accidentsByCityCounty = accidentRepository.findAllByCityContainsAndCountyContains(city, county);
+
+            System.out.println("accidentsByCityCounty = " + accidentsByCityCounty.size());
+
+            accidentsList.addAll(accidentsByCityCounty);
+            return accidentsList;
+
+        }
+
         if(city != null && !city.isEmpty()){
             List<Accidents> accidentsByCity = accidentRepository.findAllByCityContains(city);
             System.out.println("accidentsByCity = " + accidentsByCity.size());
 
             accidentsList.addAll(accidentsByCity);
+            return accidentsList;
+
         }
 
         if(county != null && !county.isEmpty()){
@@ -80,7 +92,9 @@ public class AccidentServiceImpl implements AccidentService{
 
             System.out.println("accidentsByCounty = " + accidentsByCounty.size());
 
-            accidentsList.retainAll(accidentsByCounty);
+            accidentsList.addAll(accidentsByCounty);
+            return accidentsList;
+
         }
         System.out.println("accidentsList filtered = " + accidentsList.size());
 

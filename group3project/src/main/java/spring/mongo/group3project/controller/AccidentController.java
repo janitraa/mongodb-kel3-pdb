@@ -39,7 +39,7 @@ public class AccidentController {
         System.out.println("accidentsList.size() = " + accidentsList.size());
 
         model.addAttribute("accidentsList", accidentsList);
-        return "index";
+        return "geoloc";
     }
 
     @GetMapping("/us-accidents")
