@@ -22,28 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60172df0-43a2-45c0-9033-8e49e9964c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/FinalProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/config/MongoDBConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/controller/AccidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/controller/AccidentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accident.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accidents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Accidents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Pegawai.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/document/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/AccidentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/AccidentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/PegawaiRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/resource/UserResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/mongo/group3project/service/AccidentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/geoloc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/geoloc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="60172df0-43a2-45c0-9033-8e49e9964c60" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +130,7 @@
       <workItem from="1609147508332" duration="10945000" />
       <workItem from="1609167993709" duration="2363000" />
       <workItem from="1609170418746" duration="4281000" />
-      <workItem from="1609247639047" duration="8724000" />
+      <workItem from="1609247639047" duration="9079000" />
     </task>
     <servers />
   </component>

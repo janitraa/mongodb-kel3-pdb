@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e96624e0-d895-4c78-9b9d-789c4f969e3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/FinalProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/config/MongoDBConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/controller/AccidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/controller/AccidentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/document/Accident.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/document/Accidents.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/document/Accidents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/document/Pegawai.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/document/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/repository/AccidentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/repository/AccidentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/repository/PegawaiRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/resource/UserResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/service/AccidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/service/AccidentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/service/AccidentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/spring/mongo/group3project/service/AccidentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/resources/templates/geoloc.html" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/resources/templates/geoloc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/resources/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="e96624e0-d895-4c78-9b9d-789c4f969e3e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609252444618</updated>
-      <workItem from="1609252450952" duration="4116000" />
+      <workItem from="1609252450952" duration="4396000" />
     </task>
     <servers />
   </component>
