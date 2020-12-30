@@ -11,6 +11,7 @@ An application in the form of a website using Mongodb technology that can displa
 
 - Mongo DB
 - Python
+- Spring Boot
 
 ## Contributors 👩‍💻👨‍💻
 
