@@ -125,6 +125,7 @@
           <p class="card-title" th:if="${accident.severity}==2" th:text="'Severity: Medium Impact'"></p>
           <p class="card-title" th:if="${accident.severity}==3" th:text="'Severity: High Impact'"></p>
           <p class="card-title" th:if="${accident.severity}==4" th:text="'Severity: Very High Impact'"></p>
+          <p class="card-title" th:text="'Weather Condition: ' + ${accident.weather_condition}"></p>
           <p class="card-title" th:text="'Period of Time: ' + ${accident.period_time}"></p>
           <p class="card-title" th:text="'Date: ' + ${accident.date}"></p>
 
